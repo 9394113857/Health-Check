@@ -504,13 +504,72 @@ Models/diabetes-model.pkl
 
 # 3. 👶 Fetal Health Flow
 
-## 🔴 Fetal Health Prediction Result
+**Fetal Health Prediction Result:**  
+![WORKING NOW](https://img.shields.io/badge/STATUS-WORKING%20NOW-brightgreen)
+
+### 🌐 Live Fetal Health Prediction
+
+[Open Live Fetal Health Predictor](https://healthcheck-udoy.onrender.com/fetal_health)
 
 ### Current Status
 
-The Fetal Health prediction flow is **not yet fully verified/confirmed**.
+The Fetal Health prediction flow is currently working on the live website.
 
-The exact notebook, model, input mapping, preprocessing, and deployment flow still need to be checked before finalizing the implementation details.
+The application accepts **21 fetal health / cardiotocography-related input features** and uses the trained machine-learning model to predict the fetal health class.
+
+---
+
+## 🏆 Main Fetal Health Notebook
+
+**Notebook:** `FetalHealthClassification_Imbalanced.ipynb`
+
+**Role:** 🥇 **MAIN NOTEBOOK**
+
+This is the **primary Fetal Health notebook** to study, understand, and use as the main project/interview reference.
+
+### Why This Is the Main Notebook
+
+The notebook focuses on **Fetal Health Classification with an imbalanced dataset** and includes:
+
+- Dataset loading
+- Dataset exploration
+- Class distribution analysis
+- Identification of class imbalance
+- Understanding the three fetal health categories
+- Feature/target separation
+- Train-test split
+- Handling imbalanced data
+- Oversampling techniques
+- Model comparison
+- Decision Tree
+- Random Forest
+- Linear SVC
+- AdaBoost
+- SGD Classifier
+- F1-score evaluation
+- Recall evaluation
+- Precision evaluation
+- Classification report
+- GridSearchCV
+- Random Forest hyperparameter tuning
+- Final Random Forest model
+- Model saving
+- Pickle deployment model
+
+### 🎯 Main Notebook Priority
+
+**⭐⭐⭐⭐⭐ — HIGHEST PRIORITY**
+
+---
+
+## 🧠 Fetal Health Classification
+
+The notebook identifies **three fetal health classes** using the `fetal_health` target variable.
+
+### Target
+
+```text
+fetal_health
 
 ---
 
