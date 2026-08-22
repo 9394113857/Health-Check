@@ -1,24 +1,58 @@
-# 1. Malaria Flow:-
-**Malaria code not finalized ✅✅✅✅✅.ipynb**
+# ML Codes / Notebook Links
 
-https://colab.research.google.com/drive/1EdgGBI-s_cyNwJiftYerqVPzLbzI1Dup?usp=sharing
+> **Status Legend:**  
+> 🟢 **WORKING NOW** — Confirmed working  
+> 🟠 **NEEDS UPDATES** — Changes/editing are still required  
+> 🔴 **NOT YET CHECKED** — Not yet verified/confirmed  
 
-**Malaria Predictor or Prediction**
+---
 
-In Site Predictions Working Now
+## 1. Malaria Flow
 
-# 2. Diabetes Flow:-
-**Diabetes Prediction Result**
+**Malaria Predictor / Prediction:**  
+![WORKING NOW](https://img.shields.io/badge/STATUS-WORKING%20NOW-brightgreen)
 
-In Site Predictions Working Now
+**Malaria Code / Colab Notebook:**  
+![NEEDS UPDATES](https://img.shields.io/badge/STATUS-NEEDS%20UPDATES-orange)
 
-# 3. Fetal Health Flow:-
-**Fetal Health Prediction Result**
+**Note:** Some changes/edits are still required in the Colab notebook.
 
-In Site Predictions Working Now
+**Google Colab Notebook:**  
+[Open Malaria Colab Notebook](https://colab.research.google.com/drive/1EdgGBI-s_cyNwJiftYerqVPzLbzI1Dup?usp=sharing)
 
-# 4. Stroke Prediction Flow:-
-**Stroke Prediction Result**
+---
 
-In Site Predictions Working Now
+## 2. Diabetes Flow
 
+**Diabetes Prediction Result:**  
+![WORKING NOW](https://img.shields.io/badge/STATUS-WORKING%20NOW-brightgreen)
+
+---
+
+## 3. Fetal Health Flow
+
+**Fetal Health Prediction Result:**  
+![NOT YET CHECKED](https://img.shields.io/badge/STATUS-NOT%20YET%20CHECKED-red)
+
+**Note:** Prediction flow is not yet fully verified/confirmed.
+
+---
+
+## 4. Stroke Prediction Flow
+
+**Stroke Prediction Result:**  
+![NOT YET CHECKED](https://img.shields.io/badge/STATUS-NOT%20YET%20CHECKED-red)
+
+**Note:** Prediction flow is not yet fully verified/confirmed.
+
+---
+
+# Status Summary
+
+| Prediction / Notebook | Status |
+|---|---|
+| 🦟 Malaria Predictor | ![WORKING NOW](https://img.shields.io/badge/WORKING%20NOW-brightgreen) |
+| 📓 Malaria Colab Notebook | ![NEEDS UPDATES](https://img.shields.io/badge/NEEDS%20UPDATES-orange) |
+| 🩸 Diabetes Prediction | ![WORKING NOW](https://img.shields.io/badge/WORKING%20NOW-brightgreen) |
+| 👶 Fetal Health Prediction | ![NOT YET CHECKED](https://img.shields.io/badge/NOT%20YET%20CHECKED-red) |
+| 🧠 Stroke Prediction | ![NOT YET CHECKED](https://img.shields.io/badge/NOT%20YET%20CHECKED-red) |
