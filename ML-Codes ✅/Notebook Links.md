@@ -12,7 +12,7 @@
 **Malaria Predictor / Prediction:**  
 ![WORKING NOW](https://img.shields.io/badge/STATUS-WORKING%20NOW-brightgreen)
 
-**Malaria Code / Colab Notebook:**  
+**Malaria Code / Colab Notebook:**   
 ![NEEDS UPDATES](https://img.shields.io/badge/STATUS-NEEDS%20UPDATES-orange)
 
 **Note:** Some changes/edits are still required in the Colab notebook.
