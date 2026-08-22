@@ -12,36 +12,150 @@
 **Malaria Predictor / Prediction:**  
 ![WORKING NOW](https://img.shields.io/badge/STATUS-WORKING%20NOW-brightgreen)
 
-<strong>Malaria Code / Colab Notebook:</strong><br>
+### 🌐 Live Malaria Prediction
 
-<a href="https://colab.research.google.com/drive/1EdgGBI-s_cyNwJiftYerqVPzLbzI1Dup?usp=sharing" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/STATUS-NEEDS%20UPDATES-orange" alt="NEEDS UPDATES">
-</a>
+[Open Live Malaria Predictor](https://healthcheck-udoy.onrender.com/malaria)
 
-**Note:** Some changes/edits are still required in the Colab notebook.
 
-**Google Colab Notebook:**  
-[Open Malaria Colab Notebook](https://colab.research.google.com/drive/1EdgGBI-s_cyNwJiftYerqVPzLbzI1Dup?usp=sharing)
+### Current Status
 
-### Current Focus
+The Malaria prediction flow is currently working on the live website.
 
-- [ ] Review the existing Malaria notebook
-- [ ] Complete required changes/edits
-- [ ] Check preprocessing
-- [ ] Check model loading
-- [ ] Check prediction flow
-- [ ] Verify the final prediction result
-- [ ] Confirm the complete deployment flow
+The application accepts a **cell image upload** for prediction.
 
-### Interview Focus
+**Website Input:**
 
-- Overall Malaria prediction workflow
-- Dataset and preprocessing
-- Model used
-- Model input and prediction
-- Connection between model and application
+- Cell image
+- JPG format
 
-**Interview Priority:** ⭐⭐⭐
+---
+
+## 🏆 Main Malaria Notebook
+
+**Notebook:** `Malaria_Detecion_Code.ipynb`
+
+**Role:** 🥇 **MAIN NOTEBOOK**
+
+This is the **primary Malaria notebook** to study, understand, and use as the main project/interview reference.
+
+### Why This Is the Main Notebook
+
+This notebook contains the more complete end-to-end Malaria CNN workflow, including:
+
+- Dataset setup
+- Kaggle dataset download
+- Dataset verification
+- Dataset extraction
+- Image loading
+- Image preprocessing
+- Image resizing
+- Label creation
+- Training/testing split
+- CNN model development
+- Model training
+- Training accuracy/loss analysis
+- Final model evaluation
+- Classification report
+- Confusion matrix
+- Sample predictions
+- Model saving
+- Additional test-image prediction
+- Batch prediction and evaluation
+
+### Main Notebook Topics
+
+- [ ] Dataset understanding
+- [ ] Parasitized vs Uninfected classes
+- [ ] Image loading
+- [ ] Image preprocessing
+- [ ] Image resizing to 50 × 50
+- [ ] RGB image handling
+- [ ] Label creation
+- [ ] Train-test split
+- [ ] One-hot encoding
+- [ ] CNN architecture
+- [ ] Convolution layers
+- [ ] MaxPooling
+- [ ] Batch Normalization
+- [ ] Dropout
+- [ ] Flatten layer
+- [ ] Dense layers
+- [ ] Softmax output
+- [ ] Model compilation
+- [ ] Model training
+- [ ] Training accuracy
+- [ ] Validation accuracy
+- [ ] Training loss
+- [ ] Validation loss
+- [ ] Final test evaluation
+- [ ] Classification report
+- [ ] Precision
+- [ ] Recall
+- [ ] F1-score
+- [ ] Confusion Matrix
+- [ ] Sample predictions
+- [ ] Model saving
+- [ ] Model loading
+- [ ] Batch prediction
+- [ ] Deployment connection
+
+### 🎯 Main Notebook Priority
+
+**⭐⭐⭐⭐⭐ — HIGHEST PRIORITY**
+
+---
+
+## 🥈 Reference Malaria Notebook
+
+**Notebook:** `malariadetection (1).ipynb`
+
+**Role:** 🥈 **REFERENCE NOTEBOOK**
+
+This is the earlier/simpler Malaria notebook.
+
+It should be kept as a reference for understanding the original CNN implementation and basic training workflow.
+
+### Reference Notebook Topics
+
+- [ ] Basic dataset loading
+- [ ] Parasitized images
+- [ ] Uninfected images
+- [ ] Image resizing
+- [ ] Train-test split
+- [ ] One-hot encoding
+- [ ] CNN architecture
+- [ ] Model compilation
+- [ ] Model training
+- [ ] Model evaluation
+- [ ] Accuracy
+- [ ] Training/validation curves
+- [ ] Confusion Matrix
+- [ ] Basic prediction
+- [ ] Saving `malaria-model.h5`
+
+### 🎯 Reference Notebook Priority
+
+**⭐⭐⭐ — MEDIUM PRIORITY**
+
+### Purpose of Reference Notebook
+
+Use this notebook mainly to:
+
+> Understand the original/simple CNN implementation.
+
+> Compare it with the more complete Malaria notebook.
+
+> Review the basic model-building flow if needed.
+
+---
+
+## 🦠 Malaria Classification
+
+The model performs **cell image classification** between two classes:
+
+```text
+0 → Parasitized / Infected
+1 → Uninfected
 
 ---
 
@@ -198,3 +312,15 @@ classifier.predict(data)
 Diabetes Prediction
         ↓
 Live Website Result
+
+---
+
+# 3. Fetal Health Flow
+
+---
+
+# 4. Stroke Prediction Flow
+
+---
+
+# 5. Continue
