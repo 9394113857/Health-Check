@@ -674,29 +674,70 @@ Fetal Health Result
 
 # 4. 🧠 Stroke Prediction Flow
 
-## 🔴 Stroke Prediction Result
+## 🟢 Stroke Prediction
+
+### 🌐 Live Stroke Prediction
+
+[Open Live Stroke Prediction](https://healthcheck-udoy.onrender.com/stroke)
 
 ### Current Status
 
-The Stroke prediction flow is **not yet fully verified/confirmed**.
+The Stroke prediction flow has been checked against the Stroke notebook, Flask code, and prediction page.
 
-The exact notebook, model, input mapping, preprocessing, and deployment flow still need to be checked before finalizing the implementation details.
+The Stroke model uses **10 input features** for prediction.
 
 ---
 
-## 🌐 Stroke Prediction
+## 🏆 Main Stroke Notebook
 
-**Prediction Page:** 🔴 To be verified
+**Notebook:** `Stroke.ipynb`
 
-### Verification Status
+**Role:** 🥇 **MAIN NOTEBOOK**
 
-* [ ] Prediction flow not yet fully checked
-* [ ] Notebook not yet finalized
-* [ ] Main/reference notebook not yet identified
-* [ ] Input mapping not yet confirmed
-* [ ] Preprocessing not yet confirmed
-* [ ] Model not yet confirmed
-* [ ] Final prediction output not yet confirmed
+**Priority:** ⭐⭐⭐⭐⭐ — HIGHEST PRIORITY
+
+### Main Notebook Topics
+
+- Dataset loading
+- Stroke dataset
+- Data cleaning
+- Removing `id`
+- Handling missing values
+- Categorical feature encoding
+- Feature / target separation
+- Data preprocessing
+- Train-test split
+- Classification
+- Model training
+- Model evaluation
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+- Prediction
+- Model saving
+- Flask deployment
+
+---
+
+## 🧠 Stroke Dataset
+
+The Stroke dataset contains:
+
+```text
+id
+gender
+age
+hypertension
+heart_disease
+ever_married
+work_type
+Residence_type
+avg_glucose_level
+bmi
+smoking_status
+stroke
 
 ---
 
