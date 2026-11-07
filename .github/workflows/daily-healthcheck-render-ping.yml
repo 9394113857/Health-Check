@@ -1,0 +1,244 @@
+
+# ============================================================
+# 🚀 DAILY RENDER HEALTH CHECK APPLICATION PING
+#
+# Repository:
+#       9394113857/Health-Check
+#
+# Website:
+#       https://healthcheck-udoy.onrender.com/
+#
+# Schedule:
+#       Daily at 6:00 AM IST
+#
+# Features:
+#       ✅ Daily scheduled trigger
+#       ✅ Manual trigger
+#       ✅ One HTTP GET request
+#       ✅ Wait for Render cold start response
+#       ✅ Capture actual HTTP status
+#       ✅ Capture actual response body
+#       ✅ Display response in GitHub Actions logs
+#       ✅ Display final execution status
+#
+# No Email
+# No CI
+# No CD
+# No Docker
+# No Deployment
+#
+# ============================================================
+
+name: 🚀 Daily Render Health Check Ping
+
+# ============================================================
+# EVENTS
+# ============================================================
+
+on:
+
+  # 6:00 AM IST = 00:30 UTC
+
+  schedule:
+    - cron: "30 0 * * *"
+
+  # Manual trigger
+
+  workflow_dispatch:
+
+# ============================================================
+# PERMISSIONS
+# ============================================================
+
+permissions:
+  contents: read
+
+# ============================================================
+# JOBS
+# ============================================================
+
+jobs:
+
+  health-check:
+
+    name: 🚀 Wake Up Health Check Website
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 20
+
+    steps:
+
+      # ======================================================
+      # STEP 1: TRIGGER WEBSITE AND CAPTURE RESPONSE
+      # ======================================================
+
+      - name: 🌐 Trigger Render Health Check Website
+
+        id: healthcheck
+
+        shell: bash
+
+        run: |
+
+          echo "================================================"
+          echo "🚀 RENDER HEALTH CHECK WAKE-UP"
+          echo "================================================"
+
+          WEBSITE_URL="https://healthcheck-udoy.onrender.com/"
+
+          echo "Website URL: $WEBSITE_URL"
+          echo "Schedule: Daily at 6:00 AM IST"
+          echo "Request Method: GET"
+          echo ""
+
+          echo "⏳ Sending one HTTP request..."
+          echo "⏳ Waiting for Render cold start response..."
+          echo ""
+
+          RESPONSE_FILE="$RUNNER_TEMP/healthcheck-response.txt"
+          ERROR_FILE="$RUNNER_TEMP/healthcheck-error.txt"
+
+          # --------------------------------------------------
+          # SEND EXACTLY ONE HTTP REQUEST
+          # --------------------------------------------------
+
+          set +e
+
+          HTTP_STATUS=$(curl \
+            --silent \
+            --show-error \
+            --location \
+            --max-time 900 \
+            --connect-timeout 30 \
+            --output "$RESPONSE_FILE" \
+            --write-out "%{http_code}" \
+            "$WEBSITE_URL" \
+            2>"$ERROR_FILE")
+
+          CURL_EXIT=$?
+
+          set -e
+
+          # --------------------------------------------------
+          # CAPTURE ACTUAL RESPONSE
+          # --------------------------------------------------
+
+          RESPONSE=$(cat "$RESPONSE_FILE" 2>/dev/null || true)
+
+          CURL_ERROR=$(cat "$ERROR_FILE" 2>/dev/null || true)
+
+          # --------------------------------------------------
+          # DETERMINE FINAL STATUS
+          # --------------------------------------------------
+
+          if [ "$CURL_EXIT" -eq 0 ] && \
+             [ "$HTTP_STATUS" -ge 200 ] && \
+             [ "$HTTP_STATUS" -lt 300 ]; then
+
+            STATUS="SUCCESS"
+
+          else
+
+            STATUS="FAILED"
+
+          fi
+
+          # --------------------------------------------------
+          # DISPLAY ACTUAL RESPONSE
+          # --------------------------------------------------
+
+          echo ""
+          echo "================================================"
+          echo "📡 ACTUAL WEBSITE RESPONSE"
+          echo "================================================"
+
+          echo "Website: $WEBSITE_URL"
+
+          echo "HTTP Status: $HTTP_STATUS"
+
+          echo "Curl Exit Code: $CURL_EXIT"
+
+          echo ""
+          echo "Response Body:"
+
+          if [ -n "$RESPONSE" ]; then
+            printf '%s\n' "$RESPONSE"
+          else
+            echo "No response body received."
+          fi
+
+          if [ -n "$CURL_ERROR" ]; then
+            echo ""
+            echo "Request Error:"
+            echo "$CURL_ERROR"
+          fi
+
+          echo ""
+          echo "================================================"
+          echo "FINAL STATUS: $STATUS"
+          echo "================================================"
+
+          # --------------------------------------------------
+          # SAVE RESPONSE AS GITHUB ACTION OUTPUTS
+          # --------------------------------------------------
+
+          {
+            echo "status=$STATUS"
+            echo "http_status=$HTTP_STATUS"
+            echo "curl_exit=$CURL_EXIT"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "HTTP request completed."
+
+      # ======================================================
+      # STEP 2: FINAL EXECUTION REPORT
+      # ======================================================
+
+      - name: 📊 Display Final Health Check Report
+
+        if: always()
+
+        shell: bash
+
+        env:
+          STATUS: ${{ steps.healthcheck.outputs.status }}
+          HTTP_STATUS: ${{ steps.healthcheck.outputs.http_status }}
+          CURL_EXIT: ${{ steps.healthcheck.outputs.curl_exit }}
+
+        run: |
+
+          echo ""
+          echo "================================================"
+          echo "🚀 DAILY HEALTH CHECK REPORT"
+          echo "================================================"
+
+          echo "Application: Health Check"
+          echo "Platform: Render"
+
+          echo "Website URL:"
+          echo "https://healthcheck-udoy.onrender.com/"
+
+          echo ""
+          echo "Schedule: Daily at 6:00 AM IST"
+
+          echo "Trigger: ${{ github.event_name }}"
+
+          echo "Workflow Run: ${{ github.run_number }}"
+
+          echo ""
+          echo "HTTP Status: ${HTTP_STATUS:-NOT_AVAILABLE}"
+
+          echo "Curl Exit Code: ${CURL_EXIT:-NOT_AVAILABLE}"
+
+          echo "Final Result: ${STATUS:-FAILED}"
+
+          echo ""
+          echo "================================================"
+
+          echo "No email notifications."
+          echo "No deployment."
+          echo "One HTTP GET request only."
+
+          echo "================================================"
+
